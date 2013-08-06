@@ -1,9 +1,8 @@
-You look great in Suspenders
+ReadMe App
 ============================
 
-Use the following guides for getting things done, programming well, and
-programming in style.
+This application enables people to share and talk about articles they find
+online.
 
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+This application came out of my design apprenticeship at thoughtbot, inc. during
+the summer of 2013 in San Francisco, CA.
