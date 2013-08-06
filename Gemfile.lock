@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/oliverfriedmann/rails-bookmarklet.git
+  revision: fd827ac8e6102e0d8a3468943a096a956039085a
+  specs:
+    rails-bookmarklet (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,6 +219,7 @@ DEPENDENCIES
   pg
   rack-timeout
   rails (>= 4.0.0)
+  rails-bookmarklet!
   rails_12factor
   recipient_interceptor
   rspec-rails (>= 2.14)
