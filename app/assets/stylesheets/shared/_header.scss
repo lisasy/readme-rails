@@ -1,0 +1,24 @@
+header.header {
+  @include span-columns(12);
+  background: $header-background-color;
+
+  section.header-container {
+    @include outer-container;
+
+    div.header-content {
+      display: table-cell;
+      vertical-align: middle;
+      height: 40px;
+
+      h1 {
+        font-size: em(18);
+
+        a {
+          color: $light-blue;
+          margin: 0;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

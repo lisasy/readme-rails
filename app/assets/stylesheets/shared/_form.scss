@@ -1,0 +1,31 @@
+form {
+
+  fieldset {
+    border: none;
+  }
+
+  div.text-field {
+    position: relative;
+
+    input[type="text"] {
+      @include pad(8px 10px);
+      border: 1px solid $stroke-color;
+      border-radius: 4px;
+      width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[type="submit"] {
+      border: none;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+}

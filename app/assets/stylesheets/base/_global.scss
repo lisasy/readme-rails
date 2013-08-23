@@ -1,0 +1,31 @@
+.button {
+  @include pad(8px 24px);
+  @include transition(all 0.15s ease-in);
+  background: $blue;
+  border-radius: 4px;
+  color: $white;
+  font-size: em(20);
+  font-family: $sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  i {
+    font-size: em(12);
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background: darken($blue, 10%);
+  }
+
+  &.active {
+    background: $dark-blue;
+    color: $light-blue;
+  }
+}
+
+li {
+  list-style: none;
+}

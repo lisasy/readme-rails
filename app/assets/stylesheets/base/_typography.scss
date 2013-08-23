@@ -1,0 +1,15 @@
+$serif: "ff-tisa-web-pro", serif;
+$sans-serif: "freight-sans-pro", sans-serif;
+
+$heading: $sans-serif;
+
+body {
+  font-family: $serif;
+  font-size: em(18);
+}
+
+h1 {
+  font-family: $heading;
+  font-weight: 600;
+}
+

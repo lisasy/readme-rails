@@ -1,0 +1,18 @@
+!!!5
+%html
+  %head
+    %meta{ :charset => "utf-8" }
+    %meta{ :content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    = stylesheet_link_tag "normalize", "application"
+    %link{ :rel => "stylesheet", 
+          :href => "//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" }
+    = javascript_include_tag  "application"
+    :plain
+      <script type="text/javascript" src="//use.typekit.net/zlz6hvy.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  %body{ class: body_class }
+    = render 'header'
+    %section.container
+
+      %section.body-content
+        = yield

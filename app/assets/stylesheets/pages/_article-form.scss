@@ -1,0 +1,25 @@
+section.form {
+  @include outer-container;
+  text-align: center;
+}
+
+form.add-article-form {
+  @include pad(40px 0);
+  margin: 40px auto;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  fieldset {
+    @include pad(60px);
+    @include shift(3);
+    @include span-columns(6);
+    border: 8px dashed $stroke-color;
+    border-radius: 8px;
+  }
+
+  div.text-field {
+  }
+}

@@ -1,0 +1,11 @@
+body {
+  background: $background-color;
+}
+
+section.container {
+  @include outer-container;
+}
+
+section.body-content {
+  margin: 40px auto;
+}
