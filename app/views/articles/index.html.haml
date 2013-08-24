@@ -1,11 +1,11 @@
-%section.index
-  %section.form
-    %section.container
-      =link_to content_tag( :i,'', :class => 'icon-plus' ) + " Add article", "", :class => "add-article button"
-    %form{ :action => article_path, :method => "post", :class => "add-article-form" }
-      %fieldset
-        %li
-          %div.text-field
-            %label{ :for => "article" } Insert URL below:
-            %input{ :type => "text", :name => "article", :class => "url-value", :placeholder => "http://google.com" }
-            %input{ :type => "submit", :value => "Add", :class => "submit-url button" }
+= render 'form'
+
+%ul
+  - @articles.each do |article|
+    %li
+      = article.url
+      = link_to 'Show', article
+      -# = link_to 'Edit', edit_article_path(article)
+      = link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= link_to 'New Article', new_article_path

@@ -1,4 +1,4 @@
-Readmeapp::Application.routes.draw do
+Readmeapp::Application.routes.draw do  
   resources :articles
   root to: "articles#index"
 end
