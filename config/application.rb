@@ -7,6 +7,7 @@ require "action_mailer/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
@@ -14,6 +15,7 @@ Bundler.require(:default, Rails.env)
 module Readmeapp
   class Application < Rails::Application
     config.active_record.default_timezone = :utc
+    config.autoload_paths += %W(#{config.root}/lib)
 
   config.generators do |generate|
     generate.helper false

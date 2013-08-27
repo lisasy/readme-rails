@@ -1,8 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Url:
+  %strong URL:
   = @article.url
+%p
+  = "#{ @article.url.length } characters"
+%p
+  = parse_text(@article.url.to_s)
 
 = link_to 'Edit', edit_article_path(@article)
 \|

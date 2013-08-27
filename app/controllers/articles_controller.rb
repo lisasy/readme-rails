@@ -1,38 +1,34 @@
 class ArticlesController < ApplicationController
+  helper Parser
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
-  # GET /articles
   def index
     @articles = Article.all
     @article = Article.new
   end
 
-  # GET /articles/1
   def show
     @article = Article.find(params[:id])
   end
 
-  # GET /articles/new
   def new
     @article = Article.new
   end
 
-  # GET /articles/1/edit
   def edit
   end
 
-  # POST /articles
   def create
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
+      render action: 'show'
     else
       render action: 'new'
     end
   end
 
-  # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
@@ -45,6 +41,10 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
+  end
+
+  def self.parse_text
+    self.body.scan(/./).size
   end
 
   private
