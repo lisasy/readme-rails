@@ -1,10 +1,12 @@
 class ArticlesController < ApplicationController
   helper Parser
-  before_action :authenticate_user!, :set_article, only: [:show, :edit, :update,
+  # before_filter :authorize
+  before_action :set_article, only: [:show, :edit, :update,
     :destroy]
   skip_before_filter :verify_authenticity_token
 
   def index
+    # current_user.articles
     @articles = Article.all
     @article = Article.new
   end

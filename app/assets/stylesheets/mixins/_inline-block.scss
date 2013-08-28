@@ -1,0 +1,20 @@
+@mixin inline-block {
+  ul {
+    display: block;
+
+    li {
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+@mixin list-item-width($numberOfListItems) {
+  li {
+    width: 100%/$numberOfListItems;
+    
+    a {
+      display: block;
+    }
+  }
+}

@@ -1,26 +1,44 @@
+body.articles-index {
+  header {
+    h4 {
+      float: right;
+      margin: 0;
+    }
+  }
+}
+
 ul.article-list {
   @include span-columns(12);
-  margin-top: 60px;
   margin-left: 0;
   padding-left: 0;
-  
 
   li {
-    background: $white;
-    border: 1px solid $stroke-color;
-    padding: 40px 20px;
-    margin: 10px auto;
-    border-radius: 6px;
     @include span-columns(12);
+    background: $white;
+    border-radius: 6px;
+    border: 1px solid $stroke-color;
+    margin: 10px auto;
+    padding: 40px 20px;
 
+    small {
+      color: darken($light-gray, 30%);
+    }
+
+    aside.editable {
+      float: right;
+      
+      a {
+        text-decoration: none;
+      }
+    }
   }
 }
 
 
 
 article.article {
-  @include span-columns(6);
   @include shift(3);
+  @include span-columns(6);
 }
 
 .highlight {

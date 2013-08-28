@@ -13,6 +13,9 @@
   %body{ class: body_class }
     = render 'header'
     %section.container
-      %p.notice #{ notice }
+      - if notice
+        %p.notice #{ notice }
+      - if alert
+        %p.alert #{ alert }
       %section.body-content
         = yield

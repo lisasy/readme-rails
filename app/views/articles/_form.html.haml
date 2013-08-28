@@ -2,7 +2,7 @@
   %section.form
     %section.container
       =link_to content_tag( :i,'', :class => 'icon-plus' ) + " Add article", "", :class => "add-article button"
-    = form_for @article, html: { class: "add-article-form" } do |f|
+    = form_for (@article), html: { class: "add-article-form" } do |f|
       %fieldset
         %li
           %div.text-field

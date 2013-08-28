@@ -9,6 +9,8 @@
   = @article.url
   = @article.title
 
+= link_to "Read article on original website", @article.url, target: "_blank"
+
 %article.article
   = parse_text(@article.url.to_s)
 

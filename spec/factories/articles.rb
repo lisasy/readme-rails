@@ -1,7 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :article do
-    url "MyString"
+    url "http://moreintelligentlife.com/story/david-foster-wallace-in-his-own-words"
   end
+
 end

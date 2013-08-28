@@ -1,6 +1,7 @@
 section.form {
   @include outer-container;
   text-align: center;
+  margin: 40px auto;
 }
 
 form.add-article-form {

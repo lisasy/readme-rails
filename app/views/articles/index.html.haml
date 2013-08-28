@@ -1,8 +1,13 @@
 = render 'form'
 
+%header
+  %h4 Showing #{@articles.size} articles
 %ul.article-list
   - @articles.each do |article|
     %li
       = link_to article.url.truncate(70, separator: ' '), article
-      = "Last updated #{l( article.updated_at, :format => :date )}"
-      = link_to content_tag(:i, '', class: 'icon-remove'), article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %small Last updated #{time_ago_in_words(article.created_at)} ago
+      %aside.editable
+        = link_to content_tag(:i, '', class: 'icon-remove'), article,
+          :method => :delete,
+          :data => { :confirm => 'Are you sure?' }
