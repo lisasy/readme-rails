@@ -1,0 +1,20 @@
+ul.article-list {
+  margin-top: 60px;
+
+  li {
+    background: $white;
+    border: 1px solid $stroke-color;
+    padding: 40px 20px;
+    margin: 10px auto;
+    border-radius: 6px;
+    @include span-columns(12);
+
+  }
+}
+
+
+
+article.article {
+  @include span-columns(6);
+  @include shift(3);
+}
