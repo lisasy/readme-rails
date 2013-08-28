@@ -38,6 +38,7 @@ GEM
       json
     arel (4.0.0)
     atomic (1.1.12)
+    awesome_print (1.1.0)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -57,6 +58,7 @@ GEM
     capybara-webkit (1.0.0)
       capybara (~> 2.0, >= 2.0.2)
       json
+    chronic (0.10.1)
     coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -86,6 +88,7 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    fast-stemmer (1.0.2)
     flutie (2.0.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
@@ -121,6 +124,12 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     pg (0.16.0)
+    pismo (0.7.4)
+      awesome_print
+      chronic
+      fast-stemmer
+      nokogiri
+      sanitize
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -160,6 +169,8 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     safe_yaml (0.9.4)
+    sanitize (2.0.6)
+      nokogiri (>= 1.4.4)
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -228,6 +239,7 @@ DEPENDENCIES
   neat
   newrelic_rpm (>= 3.5.7)
   pg
+  pismo
   rack-timeout
   rails (>= 4.0.0)
   rails-bookmarklet!
