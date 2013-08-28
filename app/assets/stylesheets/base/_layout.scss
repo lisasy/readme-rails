@@ -8,4 +8,5 @@ section.container {
 
 section.body-content {
   margin: 40px auto;
+  @include span-columns(12);
 }

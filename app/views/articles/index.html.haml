@@ -3,8 +3,6 @@
 %ul.article-list
   - @articles.each do |article|
     %li
-      = link_to article.url, article
-      = article.updated_at.strftime("%b. %d, %Y")
+      = link_to article.url.truncate(70, separator: ' '), article
+      = "Last updated #{l( article.updated_at, :format => :date )}"
       = link_to content_tag(:i, '', class: 'icon-remove'), article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-= link_to 'New Article', new_article_path

@@ -15,10 +15,19 @@ form.add-article-form {
 
   fieldset {
     @include pad(60px);
-    @include shift(3);
-    @include span-columns(6);
+    @include shift(2);
+    @include span-columns(8);
     border: 8px dashed $stroke-color;
     border-radius: 8px;
+
+    @include media($mobile) {
+
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+      }
+
+    }
   }
 
   div.text-field {
