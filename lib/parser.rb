@@ -1,14 +1,9 @@
 module Parser
-  # require 'boilerpipe'
-  require 'nokogiri'
-  require 'open-uri'
-
-  # def parse_text(url)
-  #   return Boilerpipe.extract( url, {:output => :html, :extractor => :ArticleExtractor})
-  # end
+  require 'pismo'
 
   def parse_text(url)
-    return Nokogiri::HTML(open(url))
+    doc = Pismo::Document.new(url)
+    return doc.body
   end
 
 end
