@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   helper Parser
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_article, only: [:show, :edit, :update,
+    :destroy]
   skip_before_filter :verify_authenticity_token
 
   def index
@@ -37,23 +38,16 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
   def destroy
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
-  def self.parse_text
-    self.body.scan(/./).size
-  end
-
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def article_params
       params.require(:article).permit(:url)
     end

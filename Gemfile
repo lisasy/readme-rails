@@ -7,6 +7,7 @@ gem 'boilerpipe', '~> 0.0.4'
 gem 'bourbon'
 gem 'coffee-rails'
 gem 'delayed_job_active_record', '>= 4.0.0.beta2'
+gem "devise", "~> 3.0.3"
 gem 'email_validator'
 gem 'flutie'
 gem 'haml'

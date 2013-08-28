@@ -13,3 +13,20 @@ h1 {
   font-weight: 600;
 }
 
+a {
+  color: $light-blue;
+
+  &:hover {
+    color: darken($light-blue, 20%);
+  }
+}
+
+header {
+  a {
+    color: $white;
+
+    &:hover {
+      color: darken($white, 20%);
+    }
+  }
+}

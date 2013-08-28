@@ -4,6 +4,7 @@ module Parser
   def parse_text(url)
     doc = Pismo::Document.new(url)
     return doc.body
+
   end
 
 end
@@ -11,4 +12,3 @@ end
 class ArticlesController < ApplicationController
   include Parser
 end
-

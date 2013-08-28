@@ -18,3 +18,11 @@ article.article {
   @include span-columns(6);
   @include shift(3);
 }
+
+.highlight {
+  background: yellow;
+}
+
+p::selection, p::-moz-selection {
+  background: yellow;
+}
