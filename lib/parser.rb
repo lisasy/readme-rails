@@ -7,6 +7,7 @@ module Parser
 
   end
 
+
 end
 
 class ArticlesController < ApplicationController

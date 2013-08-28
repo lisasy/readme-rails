@@ -4,6 +4,7 @@
   - @articles.each do |article|
     %li
       = link_to article.url, article
-      = link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      = article.updated_at.strftime("%b. %d, %Y")
+      = link_to content_tag(:i, '', class: 'icon-remove'), article, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 = link_to 'New Article', new_article_path
