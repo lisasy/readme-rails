@@ -1,0 +1,84 @@
+section.modal {
+  display: none;
+  box-sizing: border-box;
+  left: 50%;
+  top: 30%;
+  position: fixed;
+  width: 1335px;
+
+  &.active {
+    display: block;
+  }
+
+  section.modal-container {
+    background: $white;
+    border-radius: 6px;
+    border: 1px solid $stroke-color;
+    box-shadow: 0 0 60px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: 500px;
+
+    header.modal-header {
+      background: $light-gray;
+      border-bottom: 1px solid $stroke-color;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      h4 {
+        float: center;
+        margin: 5px auto;
+        text-align: center;
+      }
+
+      div.window-editable {
+        position: absolute;
+        right: 7px;
+        top: 0;
+        
+        a {
+          text-decoration: none;
+          color: darken($light-gray, 20%);
+
+          &:hover {
+            color: darken($light-gray, 50%);
+          }
+        }
+      }
+    }
+
+    div.modal-content {
+      margin: 80px auto;
+    }
+
+    section.modal-editable {
+      z-index: 5;
+
+      button, .button, input[type="submit"] {
+        font-size: 1rem;
+      }
+
+      .cancel {
+        background: $light-gray;
+        color: darken($light-gray, 30%);
+
+        &:hover {
+          background: darken($light-gray, 5%);
+        }
+      }
+
+      .negative {
+        background: red;
+
+        &:hover {
+          background: darken(red, 5%);
+        }
+      }
+    }
+  }
+}

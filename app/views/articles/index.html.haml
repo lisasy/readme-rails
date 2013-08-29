@@ -1,5 +1,17 @@
 = render 'form'
 
+%section.modal.animated.bounceInDown
+  %section.modal-container
+    %header.modal-header
+      %h4 Delete article
+      %div.window-editable
+        = link_to content_tag( :i, '', class: 'icon-remove' ), nil, class: 'close-window'
+    %div.modal-content
+      %p Are you sure you want to delete the article?
+    %section.modal-editable
+      = submit_tag 'Cancel', class: 'cancel'
+      = submit_tag 'Delete article', method: :delete, class: 'negative'
+
 %header
   %h4 Showing #{@articles.size} articles
 %ul.article-list
@@ -8,6 +20,7 @@
       = link_to article.url.truncate(70, separator: ' '), article, class: 'article-title'
       %small Last updated #{time_ago_in_words(article.created_at)} ago
       %aside.editable
-        = link_to content_tag(:i, '', class: 'icon-remove'), article,
-          :method => :delete,
-          :data => { :confirm => 'Are you$base-font-color: $dark-gray; sure?' }
+        -# = link_to content_tag(:i, '', class: 'icon-remove'), article,
+        -#   :method => :delete,
+        -#   :data => { :confirm => 'Are you sure?' }
+        = link_to content_tag(:i, '', class: 'icon-remove'), nil, class: 'open-modal'

@@ -8,8 +8,7 @@ header.header {
     div.header-content {
       @include span-columns(12);
       @include vertical-padding(20px);
-      padding-bottom: 10px;
-      height: 80px;
+      margin: 0;
 
       h1 {
         @include span-columns(2);
@@ -28,10 +27,41 @@ header.header {
         @include inline-block;
 
         ul {
+          @include span-columns(12);
+          margin: 0;
+
           li {
-            text-align: right;
             @include span-columns(6);
             @include omega(2n);
+            margin-right: 0;
+
+            &:first-child {
+              a {
+                border-left: none;
+              }
+            }
+
+            &:last-child {
+              a {
+                border-right: none;
+              }
+            }
+
+            a {
+              @include horizontal-padding(20px);
+              border-left: 1px solid rgba(255, 255, 255, 0.2);
+              border-right: 1px solid rgba(0, 0, 0, 0.3);
+              width: 100%;
+              display: block;
+              text-align: center;
+              vertical-align: middle;
+
+              &:hover {
+                background: darken($header-background-color, 5%);
+                color: $white;
+                box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+              }
+            }
           }
         }
       }
