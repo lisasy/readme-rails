@@ -1,9 +1,12 @@
 body {
+  margin: 0;
+  padding: 0;
   background: $background-color;
 }
 
 section.container {
   @include outer-container;
+  @include vertical-padding(20px);
 }
 
 section.body-content {

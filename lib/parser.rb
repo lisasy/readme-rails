@@ -1,15 +1,11 @@
-module Parser
+class Parser
   require 'pismo'
 
-  def parse_text(url)
-    doc = Pismo::Document.new(url)
-    return doc.body
-
+  def initialize(url)
+    @doc = Pismo::Document.new(url)
   end
 
-
-end
-
-class ArticlesController < ApplicationController
-  include Parser
+  def parse_text
+    return @doc
+  end
 end

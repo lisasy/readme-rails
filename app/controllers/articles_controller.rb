@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  helper Parser
-  # before_filter :authorize
+  require 'parser'
+  require 'find'
+
   before_action :set_article, only: [:show, :edit, :update,
     :destroy]
   skip_before_filter :verify_authenticity_token
@@ -13,6 +14,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    # @article = Parser.find(params[:url])
+    # doc = @article.parse_text
+    # @body = doc.body
+    # @title = doc.title
+
   end
 
   def new

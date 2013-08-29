@@ -14,11 +14,20 @@ ul.article-list {
 
   li {
     @include span-columns(12);
-    background: $white;
+    background: $article-list-item-background;
     border-radius: 6px;
     border: 1px solid $stroke-color;
     margin: 10px auto;
     padding: 40px 20px;
+
+    a.article-title {
+      color: $base-font-color;
+      text-decoration: none;
+
+      &:hover {
+        color: lighten($base-font-color, 10%);
+      }
+    }
 
     small {
       color: darken($light-gray, 30%);
