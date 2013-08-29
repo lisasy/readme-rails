@@ -1,0 +1,69 @@
+section#clearance {
+  @include span-columns(12);
+
+  header {
+    text-align: center;
+  }
+
+  form {
+    @include span-columns(4 of 12);
+    @include shift(4);
+
+    @include media($tablet) {
+      @include span-columns(8 of 12);
+      @include shift(2);
+    }
+
+    @include media($mobile) {
+      @include span-columns(8 of 12);
+      @include shift(2);
+    }
+
+    $bradius: 6px;
+
+    > ul {
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      border-radius: $bradius;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+
+      li {
+        input {
+          width: 100%;
+          padding: 10px;
+          outline: none;
+          border: 1px solid $stroke-color;
+        }
+
+
+        &:first-child {
+          input {
+            border-top-left-radius: $bradius;
+            border-top-right-radius: $bradius;
+            border-bottom: none;
+          }
+        }
+
+        &:last-child {
+          input {
+            border-bottom-left-radius: $bradius;
+            border-bottom-right-radius: $bradius;
+          }
+        }
+      }
+    }
+
+    input {
+      width: 100%;
+    }
+
+    input[type='submit'] {
+      font-size: 16px;
+    }
+
+    div.other-links {
+      @include horizontal-padding(10px);
+      text-align: center;
+      font-size: em(14);
+    }
+  }
+}

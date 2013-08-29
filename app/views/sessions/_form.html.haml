@@ -1,0 +1,16 @@
+= form_for :session, :url => session_path do |form|
+  %ul
+    %li
+      = form.text_field :email, type: 'email', placeholder: 'Email'
+    %li
+      = form.password_field :password, placeholder: 'Password'
+
+  %div.submit-field
+    = form.submit
+
+  %div.other-links
+    %ul
+      %li
+        = link_to t('.sign_up'), sign_up_path
+      %li
+        = link_to t('.forgot_password'), new_password_path

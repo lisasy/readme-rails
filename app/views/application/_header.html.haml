@@ -6,7 +6,7 @@
       %nav
         %ul
           %li
-            = link_to "Sign up"
+            = link_to "Sign up", sign_up_path
           %li
             - if signed_in?
               = current_user.email
