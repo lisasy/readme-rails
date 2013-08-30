@@ -7,6 +7,12 @@ development: &default
   pool: 5
   timeout: 5000
 
+staging:
+  adapter: postgresql
+
+production:
+  adapter: postgresql
+
 test:
   <<: *default
   database: readmeapp_test
