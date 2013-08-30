@@ -1,18 +1,21 @@
 $(document).ready(function() {
 
+  var modal = $('section.modal');
+
   $('.open-modal').on('click', function(e) {
     e.preventDefault();
-    $('section.modal').removeClass('active');
-    $('section.modal').addClass('active');
-  });
+    var id = $(this).parents('li').attr('id');
+    console.log(id);
+    var openModal = modal.addClass('active').attr('id', id);
+    console.log(openModal);
 
-  $('section.modal div.window-editable').find('a.close-window').on('click', function(e) {
-    e.preventDefault();
-    $('section.modal').hide();
-  })
+    openModal.find('a.close-window').on('click', function() {
+      $(this).parents('section.modal#'+id).hide();
+    });
 
-  $('section.modal-editable').find('input.cancel').on('click', function() {
-    $('section.modal').hide();
+    openModal.find('input.cancel').on('click', function() {
+      $(this).parents('section.modal#'+id).hide();
+    });
   })
 })
 

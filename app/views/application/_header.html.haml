@@ -6,10 +6,12 @@
       %nav
         %ul
           %li
-            = link_to "Sign up", sign_up_path
+            - if signed_in?
+              = link_to current_user.email, root_path
+            - else
+              = link_to "Sign up", sign_up_path
           %li
             - if signed_in?
-              = current_user.email
               = link_to 'Sign out', sign_out_path, method: :delete
             - else
               = link_to "Log in", sign_in_path

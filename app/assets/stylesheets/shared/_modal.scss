@@ -2,6 +2,7 @@ section.modal {
   display: none;
   box-sizing: border-box;
   left: 50%;
+  margin-left: -200px;
   top: 30%;
   position: fixed;
   width: 1335px;
@@ -38,9 +39,9 @@ section.modal {
 
       div.window-editable {
         position: absolute;
-        right: 7px;
-        top: 0;
-        
+        right: 11px;
+        top: 3px;
+
         a {
           text-decoration: none;
           color: darken($light-gray, 20%);

@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
-  require 'parser'
-  require 'find'
-
   before_action :set_article, only: [:show, :edit, :update,
     :destroy]
   skip_before_filter :verify_authenticity_token
+
+  respond_to :html, :js
 
   def index
     # current_user.articles
@@ -13,11 +12,14 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    # @article = Parser.find(params[:url])
-    # doc = @article.parse_text
-    # @body = doc.body
-    # @title = doc.title
+    # @article = Article.find(params[:id])
+    @article = Parser.new(params[:url])
+    doc = @article.parse_text
+    @body = doc.body
+    @html_body = doc.html_body
+    @title = doc.title
+    @time = doc.datetime
+    @author = doc.author
 
   end
 
@@ -48,6 +50,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
