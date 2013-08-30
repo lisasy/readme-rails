@@ -9,10 +9,16 @@ header.header {
       @include span-columns(12);
       @include vertical-padding(20px);
       margin: 0;
+      position: relative;
+      $line-height: 1.5em;
 
       h1 {
         @include span-columns(2);
-        font-size: em(18);
+        line-height: $line-height;
+        font-size: em(16);
+
+        @include media($mobile) {
+        }
 
         a {
           color: $light-blue;
@@ -21,10 +27,43 @@ header.header {
         }
       }
 
+      span.dropdown-drawer {
+        z-index: 100000;
+        float: right;
+        display: none;
+        position: absolute;
+        top: 18px;
+        right: 18px;
+
+        @include media($mobile){
+          display: block;
+        }
+
+        i.icon-reoder {
+          color: $white;
+          font-size: em(22);
+        }
+      }
+
       nav {
-        @include shift(7);
-        @include span-columns(3);
+        @include shift(6);
+        @include omega();
+        @include span-columns(4);
         @include inline-block;
+
+        @include media($tablet) {
+          @include shift(4);
+          @include span-columns(4);
+          font-size: em(14);
+        }
+
+        @include media($mobile) {
+          @include shift(0);
+          @include span-columns(12);
+          @include fill-parent();
+          font-size: em(14);
+          display: none;
+        }
 
         ul {
           @include span-columns(12);
@@ -34,6 +73,32 @@ header.header {
             @include span-columns(6);
             @include omega(2n);
             margin-right: 0;
+
+            @include media($mobile) {
+              display: block;
+              width: 100%;
+
+              &:first-child {
+                a {
+                  border-top: none;
+                }
+              }
+
+              &:last-child {
+                a {
+                  border-bottom: none;
+                }
+              }
+
+              a {
+                @include horizontal-padding(10px);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+                border-left: none !important;
+                border-right: none !important;
+                font-size: em(14);
+              }
+            }
 
             &:first-child {
               a {
@@ -54,7 +119,8 @@ header.header {
               width: 100%;
               display: block;
               text-align: center;
-              vertical-align: middle;
+              line-height: $line-height;
+              font-size: em(14);
 
               &:hover {
                 background: darken($header-background-color, 5%);

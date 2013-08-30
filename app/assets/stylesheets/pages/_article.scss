@@ -1,24 +1,57 @@
-body.articles-index {
+section.article-list-container {
+  @include span-columns(12);
+  background: $article-list-item-background;
+  border-radius: 6px;
+  border: 1px solid $stroke-color;
+
+  @include media($mobile) {
+    padding: 0;
+    border-radius: 0;
+    border: none;
+  }
+  
   header {
-    h4 {
-      float: right;
-      margin: 0;
-    }
+    text-align: center;
   }
 }
 
 ul.article-list {
   @include span-columns(12);
   margin-left: 0;
-  padding-left: 0;
+  @include vertical-padding(20px);
+  margin-bottom: 20px;
+
+  @include media($mobile) {
+    padding: 0;
+
+    li {
+
+      &:first-child {
+        box-shadow: 0 0 10px;
+      }
+
+      &:first-child, &:last-child {
+        border-radius: 0 !important;
+      }
+    }
+  }
 
   li {
     @include span-columns(12);
-    background: $article-list-item-background;
-    border-radius: 6px;
+    background: $white;
     border: 1px solid $stroke-color;
-    margin: 10px auto;
-    padding: 40px 20px;
+    border-bottom: none;
+    padding: 30px 20px;
+
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
 
     a.article-title {
       color: $base-font-color;
@@ -30,7 +63,9 @@ ul.article-list {
     }
 
     small {
+      font-size: em(12);
       color: darken($light-gray, 30%);
+      font-style: italic;
     }
 
     aside.editable {

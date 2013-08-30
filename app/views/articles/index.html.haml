@@ -1,14 +1,15 @@
 = render 'form'
 
-%header
-  %h4 Showing #{@articles.size} articles
-%ul.article-list
-  - @articles.each do |article|
-    %li{:id => "#{article.id}"}
-      = link_to article.url.truncate(70, separator: ' '), article, class: 'article-title'
-      %small Last updated #{time_ago_in_words(article.created_at)} ago
-      %aside.editable
-        = link_to content_tag(:i, '', class: 'icon-remove'), nil, class: 'open-modal'
+%section.article-list-container
+  %header
+    %h4 Showing #{@articles.size} articles
+  %ul.article-list
+    - @articles.each do |article|
+      %li{:id => "#{article.id}"}
+        = link_to article.url.truncate(70, separator: ' '), article, class: 'article-title'
+        %small Last updated #{time_ago_in_words(article.created_at)} ago
+        %aside.editable
+          = link_to content_tag(:i, '', class: 'icon-remove'), nil, class: 'open-modal'
 
 %section.modal.animated.bounceInDown
   %section.modal-container

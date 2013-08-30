@@ -2,6 +2,11 @@ section.form {
   @include outer-container;
   text-align: center;
   margin: 40px auto;
+
+  @include media($mobile) {
+    display: none;
+  }
+
 }
 
 form.add-article-form {
