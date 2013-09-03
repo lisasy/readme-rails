@@ -1,94 +1,18 @@
-section.article-list-container {
-  @include span-columns(12);
-  background: $article-list-item-background;
-  border-radius: 6px;
-  border: 1px solid $stroke-color;
-
-  @include media($mobile) {
-    padding: 0;
-    border-radius: 0;
-    border: none;
-  }
-  
-  header {
-    text-align: center;
-  }
-}
-
-ul.article-list {
-  @include span-columns(12);
-  margin-left: 0;
-  @include vertical-padding(20px);
-  margin-bottom: 20px;
-
-  @include media($mobile) {
-    padding: 0;
-
-    li {
-
-      &:first-child {
-        box-shadow: 0 0 10px;
-      }
-
-      &:first-child, &:last-child {
-        border-radius: 0 !important;
-      }
-    }
-  }
-
-  li {
+section.article {
+  > aside {
     @include span-columns(12);
-    background: $white;
-    border: 1px solid $stroke-color;
-    border-bottom: none;
-    padding: 30px 20px;
 
-    &:first-child {
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+    strong {
+      @include span-columns(6);
     }
 
-    &:last-child {
-      border-bottom-left-radius: 6px;
-      border-bottom-right-radius: 6px;
-    }
+    div.action {
+      @include span-columns(6);
+      text-align: right;
 
-    a.article-title {
-      color: $base-font-color;
-      text-decoration: none;
-
-      &:hover {
-        color: lighten($base-font-color, 10%);
-      }
-    }
-
-    small {
-      font-size: em(12);
-      color: darken($light-gray, 30%);
-      font-style: italic;
-    }
-
-    aside.editable {
-      float: right;
-      
       a {
-        text-decoration: none;
+        font-size: em(14);
       }
     }
   }
-}
-
-
-
-article.article {
-  @include shift(3);
-  @include span-columns(6);
-}
-
-.highlight {
-  background: yellow;
-}
-
-p::selection, p::-moz-selection {
-  background: yellow;
 }

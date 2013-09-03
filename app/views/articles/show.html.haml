@@ -2,17 +2,24 @@
   <body onmousedown="highlightSelection();">
   <a href="javascript:void(0);" onclick="highlightSelection();">Highlight</a> 
 
-%p#notice= notice
+%section.article
 
-%p
-  %strong URL:
-  -# = @article.url
-  -# = @article.title
+  %p#notice= notice
 
-= link_to "Read article on original website", @article.url, target: "_blank"
+  %aside
+    - if @article.url
+      %strong #{ @article.url }
 
-%article.article
+    %div.action
+      #{ link_to "Read article on original website", @article.url, target: "_blank" }
+      #{ link_to 'Edit', edit_article_path(@article) }
+      #{ link_to 'Back', articles_path }
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+  %article.article
+    %header
+      %h1 #{ @article.title }
+      %h5 #{ @article.date.strftime('%m %d %Y') }
+      %h5 #{ @article.author }
+    %section.article-content
+      #{ @article.body }
+

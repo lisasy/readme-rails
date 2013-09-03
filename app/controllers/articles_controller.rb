@@ -12,15 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    # @article = Article.find(params[:id])
-    @article = Parser.new(params[:url])
-    doc = @article.parse_text
-    @body = doc.body
-    @html_body = doc.html_body
-    @title = doc.title
-    @time = doc.datetime
-    @author = doc.author
-
+    @article = Article.find(params[:id])
   end
 
   def new
@@ -32,6 +24,13 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    article = Parser.new(@article.url)
+    document = article.parse_text
+
+    @article.title = document.title
+    @article.body = document.html_body
+    @article.date = document.datetime
+    @article.author = document.author
 
     if @article.save
       render action: 'show'
@@ -60,6 +59,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:url)
+      params.require(:article).permit(:url, :title, :body, :date, :author)
     end
 end
