@@ -18,8 +18,8 @@
   %article.article
     %header
       %h1 #{ @article.title }
-      %h5 #{ @article.date.strftime('%m %d %Y') }
+      %h5 #{ Date.parse(@article.date).strftime('%D') }
       %h5 #{ @article.author }
     %section.article-content
-      #{ @article.body }
+      #{ @article.body.html_safe }
 

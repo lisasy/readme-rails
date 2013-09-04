@@ -33,7 +33,8 @@ class ArticlesController < ApplicationController
     @article.author = document.author
 
     if @article.save
-      render action: 'show'
+      # render action: 'show'
+      redirect_to @article
     else
       render action: 'new'
     end
