@@ -13,10 +13,15 @@
 
   %article.article
     %header
-      %h1 #{ @article.title }
-      %h5 #{ Date.parse(@article.date).strftime('%B %-d, %Y') }
-      - if @article.author
-        %h5 By #{ @article.author }
+      - if @article.title
+        %h1 #{ @article.title }
+      %ul.meta-data
+        %li
+          - if @article.author
+            %h6 By #{ @article.author }
+        %li
+          - if @article.date
+            %h6 #{ Date.parse(@article.date).strftime('%B %-d, %Y') }
     %section.article-content
-      #{ @article.body.html_safe }
-
+      - if @article.body
+        #{ @article.body.html_safe }

@@ -1,0 +1,36 @@
+%flash {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin-bottom: $base-line-height / 2;
+  padding: $base-line-height / 2;
+  font-weight: 700;
+}
+
+@mixin flash-color($color) {
+  background: $color;
+  color: darken($color, 60);
+
+  a {
+    color: darken($color, 70);
+
+    &:hover {
+      color: darken($color, 90);
+    }
+  }
+}
+
+.error, #flash_failure {
+  @extend %flash;
+  @include flash-color($error-color);
+}
+
+.notice, #flash_failure {
+  @extend %flash;
+  @include flash-color($notice-color);
+}
+
+.success, #flash_failure {
+  @extend %flash;
+  @include flash-color($success-color);
+}

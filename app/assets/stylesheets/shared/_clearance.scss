@@ -31,7 +31,7 @@ section#clearance {
           width: 100%;
           padding: 10px;
           outline: none;
-          border: 1px solid $stroke-color;
+          border: 1px solid $base-border-color;
         }
 
 
@@ -58,10 +58,11 @@ section#clearance {
 
     input[type='submit'] {
       font-size: 16px;
+      color: $white;
     }
 
     div.other-links {
-      @include horizontal-padding(10px);
+      @include y-padding(10px);
       text-align: center;
       font-size: em(14);
     }

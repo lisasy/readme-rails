@@ -2,13 +2,12 @@ input[type="submit"], button, .button {
   @include pad(8px 24px);
   @include transition(all 0.15s ease-in);
   background: $blue;
-  border-radius: 4px;
+  border-radius: $base-border-radius * 2/3;
   border: none;
-  color: $white;
+  color: $white !important;
   font-size: em(20);
   font-family: $sans-serif;
   text-transform: uppercase;
-  text-decoration: none;
   font-weight: 600;
   letter-spacing: 2px;
 
@@ -24,14 +23,16 @@ input[type="submit"], button, .button {
 
   &.active {
     background: $dark-blue;
-    color: $light-blue;
+    color: $light-blue !important;
   }
 }
 
-ul {
-  padding-left: 0;
+ul, ol {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
 }
 
-li {
-  list-style: none;
-}

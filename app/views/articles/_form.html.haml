@@ -4,10 +4,9 @@
       =link_to content_tag( :i,'', :class => 'icon-plus' ) + " Add article", "", :class => "add-article button"
     = form_for (@article), html: { class: "add-article-form" } do |article|
       %fieldset
-        %li
-          %div.text-field
-            = label_tag 'url', 'Add URL below:'
-            = article.text_field :url
-            = article.submit "Add", class: "submit-url button"
+        = label_tag 'url', 'Add URL below:'
+        %div
+          = article.text_field :url
+          = article.submit "Add", class: "submit-url button"
 
 

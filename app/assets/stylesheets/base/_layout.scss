@@ -6,7 +6,7 @@ body {
 
 section.container {
   @include outer-container;
-  @include vertical-padding(20px);
+  @include x-padding(20px);
   margin-bottom: 40px;
 
   @include media($mobile) {

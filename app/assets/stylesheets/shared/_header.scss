@@ -7,23 +7,21 @@ header.header {
 
     div.header-content {
       @include span-columns(12);
-      @include vertical-padding(20px);
       margin: 0;
       position: relative;
-      $line-height: 1.5em;
+
+      @include media($mobile) {
+        margin: 0 auto 15px 0;
+      }
 
       h1 {
         @include span-columns(2);
-        line-height: $line-height;
-        font-size: em(16);
+        font-size: $base-font-size * 1.5;
+        padding-top: ( $base / 2 ) + px;
 
-        @include media($mobile) {
-        }
 
         a {
           color: $light-blue;
-          margin: 0;
-          text-decoration: none;
         }
       }
 
@@ -38,10 +36,13 @@ header.header {
         @include media($mobile){
           display: block;
         }
-
-        i.icon-reoder {
+        
+        a {
           color: $white;
-          font-size: em(22);
+
+          i.icon-reoder {
+            font-size: em(22);
+          }
         }
       }
 
@@ -91,7 +92,7 @@ header.header {
               }
 
               a {
-                @include horizontal-padding(10px);
+                @include y-padding(10px);
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
                 border-bottom: 1px solid rgba(0, 0, 0, 0.3);
                 border-left: none !important;
@@ -113,13 +114,13 @@ header.header {
             }
 
             a {
-              @include horizontal-padding(20px);
+              @include y-padding(20px);
               border-left: 1px solid rgba(255, 255, 255, 0.2);
               border-right: 1px solid rgba(0, 0, 0, 0.3);
+              color: $white;
               width: 100%;
               display: block;
               text-align: center;
-              line-height: $line-height;
               font-size: em(14);
 
               &:hover {

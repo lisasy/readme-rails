@@ -1,19 +1,55 @@
-$background-color: #fbfbf6;
+/* Typography
+/*================================*/
+$serif: "ff-tisa-web-pro", serif;
+$sans-serif: "freight-sans-pro", sans-serif;
 
-$dark-gray: #444444;
-$medium-gray: #CCCCCC;
-$light-gray: #e1e1e1;
+$base-font-family: $serif;
+$header-font-family: $sans-serif;
 
-$base-font-color: $dark-gray;
+/* Sizes
+/*===============================*/
+$base: 22;
+$base-font-size: 22px;
+$base-line-height: $base-font-size * 1.5;
+$base-border-radius: 6px;
 
-$header-background-color: #46423d;
+/* Colors
+/*===============================*/
 
-$article-list-item-background: #EBEBEB;
-
-$blue: #629af7;
-$dark-blue: #6d7b94;
-$light-blue: #9aa8c1;
 $white: #ffffff;
+$light-tan: #FBFBF6;
+
+$light-blue: #9aa8c1;
+$blue: #629AF7;
+$dark-blue: #6D7B94;
+
+$light-gray: #EFEFEF;
+$medium-gray: #CCCCCC;
+$charcoal-gray: #46423d;
+$dark-gray: #444444;
+
+$light-red: #FBE3E4;
+$light-yellow: #FFF6BF;
+$light-green: #E6EFC2;
 
 
-$stroke-color: $light-gray;
+// Type Colors
+$base-font-color: $dark-gray;
+$base-accent-color: $light-blue;
+
+// Type Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: saturate($light-blue, 50%);
+
+// Element Colors
+$background-color: $light-tan;
+$header-background-color: $charcoal-gray;
+$article-list-item-background: #EBEBEB;
+$base-border-color: $light-gray;
+
+// Flash Colors
+$error-color: $light-red;
+$notice-color: $light-yellow;
+$success-color: $light-green;
+
+

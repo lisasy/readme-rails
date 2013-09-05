@@ -3,10 +3,13 @@ section.form {
   text-align: center;
   margin: 120px auto;
 
+  section.container > a {
+    color: $white;
+  }
+
   @include media($mobile) {
     display: none;
   }
-
 }
 
 form.add-article-form {
@@ -23,16 +26,7 @@ form.add-article-form {
     @include pad(60px);
     @include shift(2);
     @include span-columns(8);
-    border: 8px dashed $stroke-color;
+    border: 8px dashed $base-border-color;
     border-radius: 8px;
-
-    @include media($mobile) {
-
-      input[type="submit"] {
-        display: block;
-        width: 100%;
-      }
-
-    }
   }
 }

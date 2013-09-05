@@ -7,10 +7,7 @@
 @import "mixins/inline-block";
 @import "mixins/padding";
 
-@import "base/variables";
-@import "base/typography";
-@import "base/global";
-@import "base/layout";
+@import "base/base";
 
 @import "shared/header";
 @import "shared/form";

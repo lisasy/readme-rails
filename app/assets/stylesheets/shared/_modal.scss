@@ -14,7 +14,7 @@ section.modal {
   section.modal-container {
     background: $white;
     border-radius: 6px;
-    border: 1px solid $stroke-color;
+    border: 1px solid $base-border-color;
     box-shadow: 0 0 120px;
     padding: 20px;
     position: relative;
@@ -23,16 +23,15 @@ section.modal {
 
     header.modal-header {
       background: $light-gray;
-      border-bottom: 1px solid $stroke-color;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px;
+      border-bottom: 1px solid $base-border-color;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
       left: 0;
       position: absolute;
       top: 0;
       width: 100%;
 
       h4 {
-        float: center;
         margin: 5px auto;
         text-align: center;
       }
@@ -43,7 +42,6 @@ section.modal {
         top: 3px;
 
         a {
-          text-decoration: none;
           color: darken($light-gray, 20%);
 
           &:hover {
@@ -61,12 +59,12 @@ section.modal {
       z-index: 5;
 
       button, .button, input[type="submit"] {
-        font-size: 1rem;
+        font-size: ($base-font-size * 0.75);
       }
 
       .cancel {
         background: $light-gray;
-        color: darken($light-gray, 30%);
+        color: darken($light-gray, 30%) !important;
 
         &:hover {
           background: darken($light-gray, 5%);

@@ -4,7 +4,7 @@
   <p><%= t '.description' %></p>
 
   <%= form_for :password, :url => passwords_path do |form| %>
-    <div class='text-field'>
+    <div>
       <%= form.label :email %>
       <%= form.text_field :email, :type => 'email' %>
     </div>

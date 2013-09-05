@@ -25,5 +25,49 @@ section.article {
   article.article {
     @include span-columns(8);
     @include shift(2);
+
+    header {
+      @include span-columns(12);
+      @include inline-block;
+      border-bottom: 1px solid $base-border-color;
+
+      h1 {
+        font-size: $base-font-size * 2.50;
+      }
+
+      ul.meta-data {
+        margin: (($base * 1.25) + px) auto;
+        @include span-columns(12);
+
+        li {
+          padding-right: $base + px;
+
+          h6 {
+            color: lighten($base-font-color, 50);
+            text-shadow: 0 1px 1px $white;
+          }
+        }
+      }
+
+    }
+    section.article-content {
+      @include span-columns(12);
+      @include y-padding(($base * 2) +px);
+
+      p:first-of-type {
+        p:first-letter {
+          font-size: $base-font-size * 2;
+        }
+      }
+
+      a {
+        text-decoration: underline;
+      }
+
+      img {
+        display: block;
+        margin: ($base * 2 + px) auto;
+      }
+    }
   }
 }
