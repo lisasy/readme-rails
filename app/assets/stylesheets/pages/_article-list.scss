@@ -12,15 +12,23 @@ section.article-list-container {
   }
   
   header {
+    opacity: 0.4;
     text-align: center;
+    margin: 40px;
+    text-shadow: 0 2px 1px $white;
+  }
+
+  footer {
+    @include span-columns(12);
+    text-align: center;
+    margin: 40px auto;
   }
 }
 
 ul.article-list {
   @include span-columns(12);
-  margin-left: 0;
   @include vertical-padding(20px);
-  margin-bottom: 20px;
+  margin: 0;
 
   @include media($mobile) {
     padding: 0;

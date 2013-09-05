@@ -1,4 +1,10 @@
 section.article {
+  @include span-columns(12);
+
+  .highlight {
+    background: yellow;
+  }
+
   > aside {
     @include span-columns(12);
 
@@ -14,5 +20,10 @@ section.article {
         font-size: em(14);
       }
     }
+  }
+
+  article.article {
+    @include span-columns(8);
+    @include shift(2);
   }
 }

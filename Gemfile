@@ -25,6 +25,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'unicorn'
+gem 'will_paginate'
 
 group :development do
   gem 'foreman'

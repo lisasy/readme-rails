@@ -7,19 +7,16 @@
   %p#notice= notice
 
   %aside
-    - if @article.url
-      %strong #{ @article.url }
-
     %div.action
-      #{ link_to "Read article on original website", @article.url, target: "_blank" }
-      #{ link_to 'Edit', edit_article_path(@article) }
       #{ link_to 'Back', articles_path }
+      #{ link_to "Read article on original website", @article.url, target: "_blank" }
 
   %article.article
     %header
       %h1 #{ @article.title }
-      %h5 #{ Date.parse(@article.date).strftime('%D') }
-      %h5 #{ @article.author }
+      %h5 #{ Date.parse(@article.date).strftime('%B %-d, %Y') }
+      - if @article.author
+        %h5 By #{ @article.author }
     %section.article-content
       #{ @article.body.html_safe }
 

@@ -1,7 +1,7 @@
 section.form {
   @include outer-container;
   text-align: center;
-  margin: 40px auto;
+  margin: 120px auto;
 
   @include media($mobile) {
     display: none;

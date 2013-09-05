@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def index
     # current_user.articles
-    @articles = Article.all
+    @articles = Article.paginate :page => params[:page], :per_page => 10
     @article = Article.new
   end
 
@@ -33,7 +33,6 @@ class ArticlesController < ApplicationController
     @article.author = document.author
 
     if @article.save
-      # render action: 'show'
       redirect_to @article
     else
       render action: 'new'

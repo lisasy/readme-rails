@@ -3,10 +3,17 @@ $sans-serif: "freight-sans-pro", sans-serif;
 
 $heading: $sans-serif;
 
+$base-font-size: em(22);
+
 body {
   font-family: $serif;
-  font-size: em(22);
+  font-size: $base-font-size;
   color: $base-font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: $base-font-size * 1.1;
 }
 
 h1 {

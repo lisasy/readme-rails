@@ -2,21 +2,33 @@ $(document).ready(function() {
 
   var modal = $('section.modal');
 
-  $('.open-modal').on('click', function(e) {
-    e.preventDefault();
-    var id = $(this).parents('li').attr('id');
-    console.log(id);
-    var openModal = modal.addClass('active').attr('id', id);
-    console.log(openModal);
+  var deleteArticle = {
+    init: function() {
+      $('ul.article-list li').on('click', 'a.open-modal', this.openModal);
+      $('section.modal.active').on('click', 'a.close-window', this.closeModal);
+      $('section.modal.active').on('click', 'a.cancel', this.closeModal);
+    },
+    
+    openModal: function(e) {
+      e.preventDefault();
+      var id = $(this).parents('li').attr('id');
+      console.log(id);
+      var openModal = modal.addClass('active').attr('id', id);
+      $('a.delete-article').attr('href', '/articles/' + id);
+    },
 
-    openModal.find('a.close-window').on('click', function() {
-      $(this).parents('section.modal#'+id).hide();
-    });
+    closeModal: function(e) {
+      e.preventDefault();
+      $(this).hide();
+      $('a.delete-article').attr('href', '');
+    },
 
-    openModal.find('input.cancel').on('click', function() {
-      $(this).parents('section.modal#'+id).hide();
-    });
-  })
-})
+    deleteItem: function(e) {
+      e.preventDefault();
+      $(this).attr('href', '/articles/'+id)
+    }
+  }
 
+  deleteArticle.init();
 
+});
