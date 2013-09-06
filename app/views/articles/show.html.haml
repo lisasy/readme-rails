@@ -1,15 +1,16 @@
-:plain
-  <body onmousedown="highlightSelection();">
-  <a href="javascript:void(0);" onclick="highlightSelection();">Highlight</a> 
-
 %section.article
 
   %p#notice= notice
 
+  %section.highlight-box
+    #{ link_to 'Highlight Text', '', class: 'button'}
+
+  %section.undo-box
+    #{ link_to 'Undo Highlight', '', class: 'button'}
+
   %aside
     %div.action
-      #{ link_to 'Back', articles_path }
-      #{ link_to "Read article on original website", @article.url, target: "_blank" }
+      #{ link_to 'Back', articles_path, class: 'button' }
 
   %article.article
     %header
@@ -18,10 +19,11 @@
       %ul.meta-data
         %li
           - if @article.author
-            %h6 By #{ @article.author }
+            %h6 By #{ @article.author.titleize }
         %li
           - if @article.date
             %h6 #{ Date.parse(@article.date).strftime('%B %-d, %Y') }
+        %li #{ link_to "Read article on original website", @article.url, target: "_blank" }
     %section.article-content
       - if @article.body
         #{ @article.body.html_safe }

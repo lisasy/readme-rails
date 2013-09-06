@@ -4,10 +4,4 @@ $(document).ready(function() {
     $('form.add-article-form').toggleClass('active');
     e.preventDefault();
   });
-
-  
-
-  // $('section.form').find('.submit-url').on('click', function() {
-  //   $(this).parent().html('<i class="icon-spinner icon-spin"></i>');
-  // });
 });

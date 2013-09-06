@@ -33,7 +33,7 @@ ul.article-list {
   @include media($mobile) {
     padding: 0;
 
-    li {
+    > li {
 
       &:first-child {
         box-shadow: 0 0 10px;
@@ -45,7 +45,7 @@ ul.article-list {
     }
   }
 
-  li {
+  > li {
     @include span-columns(12);
     background: $white;
     border: 1px solid $base-border-color;
@@ -64,6 +64,7 @@ ul.article-list {
 
     div.description {
       @include span-columns(10 of 12);
+      @include inline-block;
 
       a.article-title {
         color: $base-font-color;
@@ -74,11 +75,13 @@ ul.article-list {
         }
       }
 
-      small {
-        font-size: em(12);
-        color: darken($light-gray, 30%);
-        font-style: italic;
-        display: block;
+      ul {
+        li {
+          font-size: em(12);
+          color: darken($light-gray, 30%);
+          font-style: italic;
+          padding-right: $base/3 +px;
+        }
       }
     }
 

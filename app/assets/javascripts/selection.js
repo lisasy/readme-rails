@@ -1,18 +1,51 @@
-function highlightSelection() {
+$(document).ready(function() {
+
+  var highlightBox = $('section.highlight-box');
+  var undoBox = $('section.undo-box');
+  var article = $('article.article');
   var selection;
 
-  if (window.getSelection) {
-    selection = window.getSelection();
-    console.log(selection);
-  }
+  highlightBox.css({
+    display: 'block',
+    left: '300px',
+    top: '800px',
+  });
 
-  var range = selection.getRangeAt(0);
+  highlightBox.bind('click', 'a', function(e) {
+    e.preventDefault();
 
-  if (range && !selection.isCollapsed) {
-    if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
-      var span = document.createElement('span');
-      span.className = 'highlight';
-      range.surroundContents(span);
+    if (window.getSelection) {
+      selection = window.getSelection();
+      console.log(selection.toString());
     }
-  }
-}
+
+    var range = selection.getRangeAt(0);
+
+    if (range && !selection.isCollapsed) {
+      if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
+        var span = document.createElement('span');
+        span.className = 'highlight';
+        range.surroundContents(span);
+
+      }
+    }
+  })
+
+  article.delegate('span.highlight', 'mouseover', function(e) {
+    var topPosition = $('span.highlight').offset().top + $('span.highlight').height();
+    var leftPosition = $('span.highlight').width();
+
+    undoBox.css({
+      display: 'block',
+      left: leftPosition,
+      top: topPosition
+    });
+
+    undoBox.bind('click', 'a', function(e) {
+      e.eventDefault();
+      $(this).parents('p').find('span.highlight').remove();
+    });
+  });
+
+})
+

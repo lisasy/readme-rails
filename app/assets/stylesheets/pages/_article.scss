@@ -1,24 +1,23 @@
+body.articles-show {
+  position: relative;
+}
+
 section.article {
   @include span-columns(12);
 
-  .highlight {
+  span.highlight {
     background: yellow;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   > aside {
     @include span-columns(12);
-
-    strong {
-      @include span-columns(6);
-    }
+    margin: 40px auto;
 
     div.action {
-      @include span-columns(6);
-      text-align: right;
-
-      a {
-        font-size: em(14);
-      }
     }
   }
 
@@ -42,9 +41,23 @@ section.article {
         li {
           padding-right: $base + px;
 
+          &:last-child {
+            text-align: right;
+            float: right;
+          }
+
           h6 {
             color: lighten($base-font-color, 50);
             text-shadow: 0 1px 1px $white;
+          }
+          
+          a {
+            font-style: italic;
+            font-size: $base-font-size * 0.75;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
@@ -68,6 +81,34 @@ section.article {
         display: block;
         margin: ($base * 2 + px) auto;
       }
+    }
+  }
+}
+
+section.highlight-box {
+  display: none;
+
+  position: absolute;
+
+  a {
+    background: green;
+
+    &:hover {
+      background: darken(green, 5);
+    }
+  }
+}
+
+section.undo-box {
+  display: none;
+
+  position: absolute;
+
+  a {
+    background: $light-blue;
+
+    &:hover {
+      background: darken($light-blue, 5);
     }
   }
 }

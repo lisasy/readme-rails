@@ -12,7 +12,6 @@ $(document).ready(function() {
     openModal: function(e) {
       e.preventDefault();
       var id = $(this).parents('li').attr('id');
-      console.log(id);
       var openModal = modal.addClass('active').attr('id', id);
       $('a.delete-article').attr('href', '/articles/' + id);
     },
@@ -22,11 +21,6 @@ $(document).ready(function() {
       $(this).hide();
       $('a.delete-article').attr('href', '');
     },
-
-    deleteItem: function(e) {
-      e.preventDefault();
-      $(this).attr('href', '/articles/'+id)
-    }
   }
 
   deleteArticle.init();
