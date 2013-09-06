@@ -31,26 +31,26 @@ $(document).ready(function() {
     }
   })
 
-  article.delegate('span.highlight', 'click', function(e) {
+  article.delegate('span.highlight', 'click', function() {
     var topPosition = $('span.highlight').offset().top + $('span.highlight').height();
     var leftPosition = $('span.highlight').width();
 
-    undoBox.css({
+    undoBox.fadeIn().css({
       display: 'block',
       left: leftPosition,
       top: topPosition
     });
 
+    $(this).on('click', function() {
+      $(this).parent().find('span').contents().unwrap();
+      undoBox.hide();
+    });
+
     undoBox.on('click', 'a', function(e) {
+      $('span.highlight').contents().unwrap();
       e.eventDefault();
-      $(this).parents('p').find('span.highlight').remove();
-    });
+    })
 
-
-    undoBox.on('click', 'span.highlight', function(e) {
-      e.eventDefault();
-      $(this).parents('p').find('span.highlight').remove();
-    });
   });
 
 })

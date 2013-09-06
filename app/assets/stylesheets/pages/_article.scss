@@ -81,6 +81,14 @@ section.article {
         display: block;
         margin: ($base * 2 + px) auto;
       }
+
+      h2 {
+        font-size: $base-font-size * 1.75;
+      }
+
+      h3 {
+        font-size: $base-font-size * 1.50;
+      }
     }
   }
 }
@@ -101,11 +109,14 @@ section.highlight-box {
 
 section.undo-box {
   display: none;
-
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: $base-border-radius;
   position: absolute;
 
   a {
     background: $light-blue;
+    font-size: $base-font-size * 0.75;
 
     &:hover {
       background: darken($light-blue, 5);
