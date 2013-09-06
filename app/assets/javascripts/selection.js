@@ -31,7 +31,7 @@ $(document).ready(function() {
     }
   })
 
-  article.delegate('span.highlight', 'mouseover', function(e) {
+  article.delegate('span.highlight', 'click', function(e) {
     var topPosition = $('span.highlight').offset().top + $('span.highlight').height();
     var leftPosition = $('span.highlight').width();
 
@@ -41,7 +41,13 @@ $(document).ready(function() {
       top: topPosition
     });
 
-    undoBox.bind('click', 'a', function(e) {
+    undoBox.on('click', 'a', function(e) {
+      e.eventDefault();
+      $(this).parents('p').find('span.highlight').remove();
+    });
+
+
+    undoBox.on('click', 'span.highlight', function(e) {
       e.eventDefault();
       $(this).parents('p').find('span.highlight').remove();
     });
