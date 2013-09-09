@@ -33,9 +33,8 @@ class ArticlesController < ApplicationController
     @article.author = document.author
 
     if @article.save
-      redirect_to @article
+      render json: { url: article_url(@article) }, status: :created
     else
-      render action: 'new'
     end
   end
 
@@ -51,10 +50,6 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
-  end
-
-  def error_page
-
   end
 
   private

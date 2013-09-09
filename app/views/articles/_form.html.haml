@@ -2,7 +2,9 @@
   %section.form
     %section.container
       =link_to content_tag( :i,'', :class => 'icon-plus' ) + " Add article", "", :class => "add-article button"
-    = form_for (@article), html: { class: "add-article-form" } do |article|
+    %div#spinner
+      %i.icon-spinner.icon-spin
+    = form_for (@article), remote: true, html: { class: "add-article-form" } do |article|
       %fieldset
         = label_tag 'url', 'Add URL below:'
         %div
