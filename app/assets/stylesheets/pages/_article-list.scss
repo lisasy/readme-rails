@@ -47,7 +47,7 @@ ul.article-list {
 
   > li {
     @include span-columns(12);
-    background: $white;
+    background: $light-tan;
     border: 1px solid $base-border-color;
     border-bottom: none;
     padding: 30px 20px;
@@ -65,6 +65,7 @@ ul.article-list {
     div.description {
       @include span-columns(10 of 12);
       @include inline-block;
+      text-align: left;
 
       a.article-title {
         color: $base-font-color;

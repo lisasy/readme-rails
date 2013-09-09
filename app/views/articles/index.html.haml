@@ -4,8 +4,8 @@
   %section.article-list-container
     %header
       %h4 Showing #{@articles.size} of #{Article.all.size} articles
-      %ul.article-list
-        = render @articles
+    %ul.article-list
+      = render @articles
     %footer
       = will_paginate @articles
 
