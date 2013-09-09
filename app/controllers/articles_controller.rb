@@ -53,6 +53,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
+  def error_page
+
+  end
+
   private
     def set_article
       @article = Article.find(params[:id])
