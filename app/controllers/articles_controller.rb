@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update,
-    :destroy]
+  before_filter :authorize, only: [:index, :new, :create]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token
 
   respond_to :html, :js
 
   def index
-    # current_user.articles
     @articles = Article.paginate :page => params[:page], :per_page => 10
     @article = Article.new
   end
